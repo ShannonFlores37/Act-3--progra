@@ -34,21 +34,24 @@ namespace Act_3__progra
             try
             {
                 //si no hay un archivo seleccionado abrimos el explirador de archivos
-                if(string.IsNullOrEmpty(archivoSeleccionado))
+                if (string.IsNullOrEmpty(archivoSeleccionado))
                 {
-                    DialogResult resultado=
+                    DialogResult resultado =
                         openFileDialog1.ShowDialog();
                     //el usuario ancelo la seleccion
-                    if(resultado == DialogResult.OK) {
+                    if (resultado == DialogResult.OK)
+                    {
                         return;
 
                         //guardar la ruta del archivo lo que selecciono se guarda ahí
-                        archivoSeleccionado= openFileDialog1.FileName;
+                        archivoSeleccionado = openFileDialog1.FileName;
                         //mostramos el nombre del archivo en el label
                         lbla.Text = "archivo seleccionado: " +
                             Path.GetFileName(archivoSeleccionado);
+                    }
                 }
-            }catch(Exeption ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error al abrir el archivo" + ex.Message);
             }
